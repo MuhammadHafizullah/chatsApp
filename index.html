@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> -->
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand main-clr fw-bold" href="#">COMPANY</a>
+        <button id="toggle-btn" class="ms-2">
+          <i class="bi bi-list main-clr mx-2"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item border-end">
+              <a class="nav-link" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">MESSAGES</a>
+            </li>
+          </ul>
+          <form class="d-flex mx-auto col-md-4" role="search" id="myform">
+            <i class="bi bi-search"></i>
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-bell-fill main-clr me-1"></i>
+                Notifications</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Welcome, Admin!
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- navbar end -->
+
+    <section id="body-section">
+      <aside>
+        <div class="links">
+          <ul>
+            <li>
+              
+              <a href="#" class="side-link clicked"> <i class="bi bi-grid-fill main-clr ico"></i> All Messages</a>
+            </li>
+            <li>
+              <a href="#" class="side-link"><i class="bi bi-inbox-fill ico"></i> Completed</a>
+            </li>
+            <li>
+              <a href="#" class="side-link"><i class="bi bi-gear-fill ico"></i> Saved</a>
+            </li>
+            <li>
+              <a href="#" class="side-link"><i class="bi bi-person-fill ico"></i> Deleted</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-block w-100">
+          <div class="col mt-4 px-3 mb-1">
+            <h2 class="fw-medium">Messages</h2>
+          </div>
+          <div class="col drop px-3 mb-2">
+            <a href="#" id="drop-down"
+              >All Chats <i class="bi bi-chevron-compact-down ms-1"></i
+            ></a>
+
+            <ul class="chats hidden">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Yelp</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </div>
+          <div class="col px-3 mb-2">
+            <div class="chat opened">
+              
+                <div class="chat-img image me-2">
+                  <img src="./images/portrait_1.jpg" alt="portrait_1">
+                </div>
+                <div class="chat-info flex-grow-1">
+                  <h5 class="name">
+                    <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#0077B5"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3188 14.8227C17.3188 16.3918 16.1377 17.6473 14.2412 17.6473H14.2064C12.3805 17.6473 11.2 16.3918 11.2 14.8227C11.2 13.2204 12.4164 12 14.277 12C16.1377 12 17.2835 13.2204 17.3188 14.8227ZM16.9605 19.8778V36.2196H11.5216V19.8778H16.9605ZM36.5752 36.2196L36.5754 26.8497C36.5754 21.8303 33.8922 19.4941 30.3131 19.4941C27.4254 19.4941 26.1325 21.0802 25.4107 22.1929V19.8783H19.9711C20.0428 21.4117 19.9711 36.22 19.9711 36.22H25.4107V27.0934C25.4107 26.605 25.446 26.1178 25.5898 25.7681C25.9829 24.7924 26.8779 23.7822 28.3805 23.7822C30.3494 23.7822 31.1365 25.2807 31.1365 27.4767V36.2196H36.5752Z" fill="white"/>
+                      </svg>   Smantha Joe</h5>
+                  <p class="mb-0">Lorem ipsum dolor sit amet...</p>
+                </div>
+              
+              <div class="timing text-end">
+                    <i class="bi bi-three-dots"></i>
+                    <span class="d-block">15 minutes ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="col px-3 mb-2">
+            <div class="chat">
+              <div class="chat-img image me-2">
+                <img src="./images/portrait_2.jpg" alt="portrait_2">
+              </div>
+              <div class="chat-info flex-grow-1">
+                <h5 class="name"><svg version="1.1" id="Layer_1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 39.9 39" enable-background="new 0 0 39.9 39" xml:space="preserve">
+               <g id="XMLID_1693_">
+                 <path id="XMLID_1695_" fill="#2DABE2" d="M20,38.6L20,38.6c-10.5,0-19-8.5-19-19v0C1,9,9.5,0.5,20,0.5h0c10.5,0,19,8.5,19,19v0
+                   C39.1,30,30.6,38.6,20,38.6z"/>
+                 <path id="XMLID_1694_" fill="#FFFFFF" d="M17.1,31h4.6V19.4H25l0.3-3.9h-3.6c0,0,0-1.5,0-2.2c0-0.9,0.2-1.3,1.1-1.3
+                   c0.7,0,2.5,0,2.5,0V8c0,0-2.6,0-3.2,0c-3.4,0-5,1.5-5,4.4c0,2.5,0,3.1,0,3.1h-2.4v3.9h2.4V31z"/>
+               </g>
+               </svg> Arik Lois</h5>
+                <p class="mb-0">Lorem ipsum dolor sit amet...</p>
+              </div>
+            
+              <div class="timing text-end">
+                <i class="bi bi-three-dots"></i>
+                <span class="d-block">45 minutes ago</span>
+          </div>
+            </div>
+          </div>
+          <div class="col px-3 mb-2">
+            <div class="chat">
+              <div class="chat-img image me-2">
+                <img src="./images/portrait_3.jpg" alt="portrait_3">
+              </div>
+              <div class="chat-info flex-grow-1">
+                <h5 class="name"><svg version="1.1" id="Layer_1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+               <style type="text/css">
+                 .st0{fill:url(#SVGID_1_);}
+                 .st1{fill:#FFFFFF;}
+               </style>
+               <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="40.7386" y1="470.924" x2="586.2218" y2="-74.5592">
+                 <stop  offset="0.0011" style="stop-color:#FBE18A"/>
+                 <stop  offset="0.2094" style="stop-color:#FCBB45"/>
+                 <stop  offset="0.3765" style="stop-color:#F75274"/>
+                 <stop  offset="0.5238" style="stop-color:#D53692"/>
+                 <stop  offset="0.7394" style="stop-color:#8F39CE"/>
+                 <stop  offset="1" style="stop-color:#5B4FE9"/>
+               </linearGradient>
+               <circle class="st0" cx="255.9759" cy="255.6866" r="252.4099"/>
+               <g>
+                 <circle class="st1" cx="345.3287" cy="167.778" r="19.6088"/>
+                 <path class="st1" d="M258.1521,173.3155c-45.419,0-82.3722,36.952-82.3722,82.371s36.9532,82.3709,82.3722,82.3709
+                   s82.3697-36.9519,82.3697-82.3709S303.5711,173.3155,258.1521,173.3155z M258.1521,308.451
+                   c-29.0947,0-52.7658-23.6693-52.7658-52.7646c0-29.0947,23.6711-52.7639,52.7658-52.7639s52.7627,23.6692,52.7627,52.7639
+                   C310.9148,284.7818,287.2469,308.451,258.1521,308.451z"/>
+                 <g>
+                   <path class="st1" d="M323.5443,422.9243h-133.537c-55.3983,0-100.4662-45.0678-100.4662-100.4662V188.9154
+                     c0-55.399,45.0678-100.4662,100.4662-100.4662h133.537c55.3983,0,100.4718,45.0672,100.4718,100.4662v133.5427
+                     C424.0161,377.8564,378.9427,422.9243,323.5443,422.9243z M190.0073,119.9159c-38.0489,0-68.9995,30.9506-68.9995,68.9995
+                     v133.5427c0,38.0489,30.9506,68.9995,68.9995,68.9995h133.537c38.0489,0,69.0052-30.9506,69.0052-68.9995V188.9154
+                     c0-38.0489-30.9563-68.9995-69.0052-68.9995H190.0073z"/>
+                 </g>
+               </g>
+               </svg> Colton Griss</h5>
+                <p class="mb-0">Lorem ipsum dolor sit amet...</p>
+              </div>
+            
+              <div class="timing text-end">
+                <i class="bi bi-three-dots"></i>
+                <span class="d-block">2 hours ago</span>
+          </div>
+            </div>
+          </div>
+          <div class="col px-3 mb-2">
+            <div class="chat">
+              <div class="chat-img image me-2">
+                <img src="./images/portrait_4.jpg" alt="portrait_4">
+              </div>
+              <div class="chat-info flex-grow-1">
+                <h5 class="name"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20"><title>yelp-flat</title><g id="Yelp"><circle id="back" cx="256" cy="256" r="256" fill="#d41d20"/><g id="yelp-2" data-name="yelp"><path d="M152.33,250.68c-4.67,7.45-6.62,31-5,46.56.56,5.14,1.5,9.43,2.86,12a10,10,0,0,0,8.56,5.77c2.28.13,3.71-.26,46.74-14.1,0,0,19.13-6.11,19.23-6.15,4.75-1.2,8-5.59,8.28-11.2s-2.67-10.81-7.55-12.64l-13.5-5.5c-46.25-19.08-48.32-19.84-50.66-19.86C157.71,245.43,154.52,247.23,152.33,250.68Z" fill="#fff"/><path d="M255.79,392.82c.76-2.16.84-3.66,1-48.89,0,0,.11-20,.14-20.17.3-4.9-2.86-9.34-8.06-11.35s-11.09-.78-14.33,3.23c0,0-9.43,11.21-9.46,11.21-32.42,38.06-33.76,39.82-34.54,42.07a9,9,0,0,0-.52,4.14,10.92,10.92,0,0,0,2.63,5.87c7.5,9,43.54,22.2,55,20.25C251.66,398.43,254.54,396.19,255.79,392.82Z" fill="#fff"/><path d="M328.86,377.07c10.87-4.31,34.59-34.48,36.24-46.08.58-4-.68-7.51-3.46-9.74-1.83-1.37-3.23-1.9-46.23-16,0,0-18.89-6.24-19.11-6.37-4.55-1.76-9.77-.13-13.29,4.21s-4.19,10.28-1.29,14.71l7.59,12.35c25.54,41.49,27.49,44.41,29.34,45.85,2.84,2.23,6.46,2.6,10.21,1.07Z" fill="#fff"/><path d="M306.66,270.32c48.88-11.84,50.77-12.47,52.7-13.71,3-2,4.45-5.34,4.19-9.41a2.19,2.19,0,0,0,0-.42c-1.26-12-22.3-43.23-32.65-48.29-3.67-1.76-7.36-1.63-10.39.41-1.91,1.23-3.27,3.08-29.45,38.88,0,0-11.84,16.12-12,16.28-3.11,3.79-3.14,9.23-.13,13.86,3.16,4.84,8.5,7.2,13.4,5.84,0,0-.21.34-.27.41C294.5,273.24,298.82,272.18,306.66,270.32Z" fill="#fff"/><path d="M257.57,230h0c-.84-19.37-6.66-105.64-7.35-109.63-1-3.64-3.8-6.21-7.89-7.24-12.46-3.09-60.16,10.28-69,19.39-2.84,3-3.89,6.62-3,9.84,1.38,2.86,60.48,95.83,60.48,95.83,8.73,14.17,15.87,12,18.2,11.23S258.38,246.47,257.57,230Z" fill="#fff"/></g></g></svg> Bella</h5>
+                <p class="mb-0">Lorem ipsum dolor sit amet...</p>
+              </div>
+            
+              <div class="timing text-end">
+                <i class="bi bi-three-dots"></i>
+                <span class="d-block">3 hours ago</span>
+          </div>
+            </div>
+          </div>
+          <div class="col px-3 mb-2">
+            <div class="chat">
+              <div class="chat-img image me-2">
+                <img src="./images/portrait_5.jpg" alt="portrait_5">
+              </div>
+              <div class="chat-info flex-grow-1">
+                <h5 class="name"><svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#55ACEE"/>
+                  <path d="M23.2812 19.5075L23.3316 20.338L22.4922 20.2363C19.4369 19.8465 16.7677 18.5245 14.5013 16.3043L13.3934 15.2027L13.108 16.0162C12.5036 17.8297 12.8897 19.7448 14.1488 21.0328C14.8203 21.7447 14.6692 21.8464 13.5109 21.4227C13.108 21.2871 12.7554 21.1854 12.7219 21.2362C12.6044 21.3549 13.0073 22.8971 13.3262 23.5073C13.7627 24.3547 14.6524 25.1851 15.6261 25.6766L16.4487 26.0664L15.475 26.0834C14.5349 26.0834 14.5013 26.1003 14.6021 26.4562C14.9378 27.5578 16.264 28.7273 17.7413 29.2357L18.7822 29.5916L17.8756 30.1339C16.5326 30.9136 14.9546 31.3542 13.3766 31.3881C12.6211 31.4051 12 31.4728 12 31.5237C12 31.6932 14.0481 32.6423 15.24 33.0151C18.8157 34.1167 23.063 33.6422 26.2526 31.761C28.5189 30.4221 30.7852 27.7612 31.8428 25.1851C32.4136 23.8123 32.9844 21.304 32.9844 20.1007C32.9844 19.3211 33.0347 19.2194 33.9748 18.2873C34.5288 17.7449 35.0492 17.1517 35.15 16.9823C35.3178 16.6603 35.3011 16.6603 34.4449 16.9484C33.018 17.4568 32.8165 17.389 33.5216 16.6264C34.042 16.084 34.6631 15.101 34.6631 14.8129C34.6631 14.7621 34.4113 14.8468 34.1259 14.9993C33.8238 15.1688 33.1523 15.423 32.6486 15.5756L31.7421 15.8637L30.9195 15.3044C30.4663 14.9993 29.8283 14.6604 29.4926 14.5587C28.6364 14.3214 27.327 14.3553 26.5548 14.6265C24.4563 15.3892 23.1301 17.3551 23.2812 19.5075Z" fill="white"/>
+                  </svg> Jing Tian</h5>
+                <p class="mb-0">Lorem ipsum dolor sit amet...</p>
+              </div>
+            
+              <div class="timing text-end">
+                <i class="bi bi-three-dots"></i>
+                <span class="d-block">4 hours ago</span>
+          </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <div class="container">
+          <div class="row my-3">
+            <div class="chat-profile d-flex align-items-center shadow-sm">
+              <div class="chat-img person-img me-2">
+                <img src="./images/portrait_1.jpg" alt="portrait_1">
+              </div>
+              <div class="chat-info flex-grow-1">
+                <h5 class="person-name">
+                  <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#0077B5"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3188 14.8227C17.3188 16.3918 16.1377 17.6473 14.2412 17.6473H14.2064C12.3805 17.6473 11.2 16.3918 11.2 14.8227C11.2 13.2204 12.4164 12 14.277 12C16.1377 12 17.2835 13.2204 17.3188 14.8227ZM16.9605 19.8778V36.2196H11.5216V19.8778H16.9605ZM36.5752 36.2196L36.5754 26.8497C36.5754 21.8303 33.8922 19.4941 30.3131 19.4941C27.4254 19.4941 26.1325 21.0802 25.4107 22.1929V19.8783H19.9711C20.0428 21.4117 19.9711 36.22 19.9711 36.22H25.4107V27.0934C25.4107 26.605 25.446 26.1178 25.5898 25.7681C25.9829 24.7924 26.8779 23.7822 28.3805 23.7822C30.3494 23.7822 31.1365 25.2807 31.1365 27.4767V36.2196H36.5752Z" fill="white"/>
+                    </svg>   Smantha Joe</h5>
+                <span>online</span>
+              </div>
+              <div class="actions pe-auto">
+                <i class="bi bi-three-dots-vertical"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="messages d-flex align-items-center user1">
+              <div class="chat-img me-2">
+                <img src="./images/portrait_1.jpg" alt="portrait_1">
+              </div>
+
+              <div class="col">
+                <div class="message col-6 mb-2">
+                  <p class="mb-0">Hi! What going on.<br/> Can you meet me at 9'o clock.</p>
+                </div>
+                <span>Message sent 2:45PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col new-msg shadow-lg">
+              <input type="text" placeholder="write something here...">
+            <button>
+              <i class="bi bi-send"></i>
+            </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
